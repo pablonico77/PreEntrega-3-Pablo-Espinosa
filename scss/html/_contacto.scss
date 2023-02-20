@@ -1,0 +1,127 @@
+@import "../vars/variables";
+@import "../vars/extend";
+@import "../vars/mixin";
+
+// nesting
+
+/*Acomode los campos a completar con Grid para que quede como el wireframe*/
+main{
+    h1{
+        margin-bottom: 3rem;
+    }
+    form{
+        .formularios{
+            @extend %tipografia;
+            margin-left: 3rem;
+            margin-bottom: 2rem;
+            display: grid;
+            justify-content: center;
+            grid-template-columns:1fr 1.5fr ;
+            grid-template-rows: repeat(4, 1fr);
+/* grid template areas*/
+            grid-template-areas:
+            "nombre mensaje"
+            "mail mensaje"
+            "telefono mensaje"
+            "telefoo mensaje";
+
+            .nombre{
+                grid-area: nombre;
+                input{
+                    width: 70%;
+                    height: 2.5rem;
+                    border-radius: 0.3rem;
+                }
+            }
+            .mail{
+                grid-area: mail;
+                input{
+                    width: 70%;
+                    height: 2.5rem;
+                    border-radius: 0.3rem;
+                }
+            }
+            .telefono{
+                grid-area: telefono;
+                input{
+                    width: 70%;
+                    height: 2.5rem;
+                    border-radius: 0.3rem;
+                }
+            }
+            .mensaje{
+                grid-area: mensaje;
+                input{
+                    width: 70%;
+                    height: 2.5rem;
+                    border-radius: 0.3rem;
+                }
+                textarea{
+                    border-radius: 0.3rem;
+                    margin-top: 1rem;
+                    width: 50%;
+                    height: 12rem;
+                }
+            }
+        }
+        .boton-dos{
+            @extend %botones;
+            margin-left: 3rem;
+            margin-bottom: 2rem;
+        }
+    }
+    h2{
+        margin-top: 3rem;
+        margin-left: 2rem;
+    }
+    .redes{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        img{
+            margin-left: 2rem;
+            display: flex;
+            width: 30%;
+        }
+    }
+
+}   
+
+.boton-dos:hover{
+    color: $color-hover;
+    font-weight: bold;
+}
+
+/* En este punto la vista del menu cambia a menu hamburguesa */
+@media screen and (max-width:992px){
+    main{
+        form{
+            .formularios{
+                @include flex-columna;
+                textarea{
+                    border-radius: 0.3rem;
+                    margin-top: 0rem;
+                    width: 70%;
+                    height: 12rem;
+                }
+            }
+        }
+    }
+}
+
+/* Estilos para tablet modelo Ipad Air */
+@media screen and (max-width:820px){
+    main{
+        form{
+            .formularios{
+                @include flex-columna;
+                textarea{
+                    border-radius: 0.3rem;
+                    margin-top: 0rem;
+                    width: 70%;
+                    height: 12rem;
+                }
+            }
+        }
+    }
+}

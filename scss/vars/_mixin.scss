@@ -1,0 +1,12 @@
+// mixin
+
+@mixin flex-columna{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin flex-fila{
+    display: flex;
+    flex-direction: row-reverse;
+}

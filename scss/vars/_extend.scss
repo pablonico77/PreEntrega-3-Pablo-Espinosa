@@ -1,0 +1,38 @@
+// extend
+
+%whatsapp {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 5px 10px 0;
+    animation-name: animacion-div;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+// creado para los botones de compra y envío de formulario.
+%botones {
+    display: inline-block;
+    background-color: $color-boton;
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    color: $color-principal;
+    box-shadow: 3px 3px 10px black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+//  Los titulos de todos los html secundarios comparten las mismas caracteristicas
+%titulos{
+    color:$color-tit-principal;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    }
+    
+// Una variable un poco mas acotada de el extend "titulos"
+%tipografia{
+    color:$color-tit-principal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}

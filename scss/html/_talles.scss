@@ -1,0 +1,96 @@
+@import "../vars/variables";
+@import "../vars/extend";
+@import "../vars/mixin";
+
+// nesting
+// empiezo por la class "tabla-talles" porque los estilos del header y del main>h1 son comunes a todos los html. No hay nesting dado que solo se aplican propiedades a 1 etiqueta del html. Header, main, h1 y footer son comunes a todos los html.
+
+.tabla-talles{
+    height: 100%;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(4, 1fr);
+    /* grid template areas */
+    grid-template-areas: 
+    "img p-uno"
+    "img p-dos"
+    "img p-tres"
+    "img p-cuatro";
+    .imagen-tabla{
+        margin-left: 1rem;
+        height: 90%;
+        grid-area: img;
+    }
+    .parrafo-uno{
+        margin-right: 2rem;
+        grid-area: p-uno;
+        span{
+            display: block;
+        }
+    }
+    .parrafo-dos{
+        margin-right: 2rem;
+        grid-area: p-dos;
+        span{
+            display: block;
+        }
+    }
+    .parrafo-tres{
+        margin-right: 2rem;
+        grid-area: p-tres;
+        span{
+            display: block;
+        }
+    }
+    .parrafo-cuatro{
+        margin-right: 2rem;
+        grid-area: p-cuatro;
+        span{
+            display: block;
+        }
+    }
+    
+}
+
+/* En este punto la vista del menu cambia a menu hamburguesa.
+En este punto cambiamos de GRID a Flex para una mejor navegacion.
+Inverti el orden del menu y el logo para que se vea como en el wireframe */
+
+@media screen and (max-width:992px){
+    .tabla-talles{
+        @include flex-columna;
+        font-size: 1.2rem;
+        .imagen-tabla{
+            height: 70%;
+        }
+    }
+    
+}
+/* Estilos para tablet modelo Ipad Air
+En esta punto cambiamos de GRID a Flex para una mejor navegacion */
+@media screen and (max-width:820px){
+    .tabla-talles{
+        @include flex-columna;
+        font-size: 1.2rem;
+        .imagen-tabla{
+            height: 50%;
+        }
+    }
+    
+}
+
+@media screen and (max-width:380px){
+    .tabla-talles{
+        .imagen-tabla{
+            height: 30%;
+        }
+        p{
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
